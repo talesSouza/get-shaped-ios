@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPW-c9-tab">
-                                <rect key="frame" x="162" y="769" width="90" height="36"/>
+                                <rect key="frame" x="304" y="160" width="90" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="iwc-bn-gou"/>
                                     <constraint firstAttribute="width" constant="90" id="pML-9S-VfR"/>
@@ -34,51 +34,162 @@
                                     <segue destination="RTr-Ab-yz0" kind="show" id="CpO-V5-4rp"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="f1U-UC-Few">
-                                <rect key="frame" x="165" y="412.5" width="84" height="71"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="230" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76o-YQ-0Bq">
+                                <rect key="frame" x="345" y="720" width="32" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="4Qf-3O-1nI"/>
+                                    <constraint firstAttribute="width" constant="32" id="EeJ-pe-xxN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5vE-9a-6dY">
+                                <rect key="frame" x="77" y="479" width="260" height="55"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add macros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqn-bB-UKY">
-                                        <rect key="frame" x="0.0" y="0.0" width="84" height="22"/>
-                                        <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="carbohydrate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlV-Cq-cIO">
+                                        <rect key="frame" x="80.5" y="0.0" width="99.5" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Q1K-mS-cw4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJu-wH-feS">
-                                        <rect key="frame" x="17" y="29" width="50" height="40"/>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hQM-NV-emh">
+                                        <rect key="frame" x="0.0" y="26" width="260" height="4"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="fXg-4w-sqb"/>
-                                            <constraint firstAttribute="height" constant="44" id="haU-Qu-qVy"/>
+                                            <constraint firstAttribute="width" constant="260" id="6hk-07-sGv"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="plus" catalog="system">
-                                            <color key="titleColor" red="0.87649688010000004" green="0.89551711450000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                    </button>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="157" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cs7-og-btS">
+                                        <rect key="frame" x="114" y="35" width="32" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="SL6-Rd-JD6"/>
+                                            <constraint firstAttribute="height" constant="20" id="bkl-Df-WiM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wal-cD-IYc">
-                                <rect key="frame" x="107" y="112" width="200" height="200"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sLl-XO-HiN">
+                                <rect key="frame" x="71" y="590" width="272" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="protein" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8o-Ds-22k">
+                                        <rect key="frame" x="110" y="0.0" width="52" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="5aS-bx-bxg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Af4-68-vi8">
+                                        <rect key="frame" x="6" y="26" width="260" height="4"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="5fp-ki-idz"/>
+                                        </constraints>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="157" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wP-84-707">
+                                        <rect key="frame" x="120" y="35" width="32" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="cgZ-v6-jdq"/>
+                                            <constraint firstAttribute="height" constant="20" id="nzX-6G-n9O"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lJm-HC-TJ4">
+                                <rect key="frame" x="77" y="701" width="260" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86R-h6-Ivg">
+                                        <rect key="frame" x="120.5" y="0.0" width="19" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="iW5-wK-0Hg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aa7-bk-yKP">
+                                        <rect key="frame" x="0.0" y="26" width="260" height="4"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="Mra-lw-CtI"/>
+                                        </constraints>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="157" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQX-5s-qvM">
+                                        <rect key="frame" x="114" y="35" width="32" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="E1g-B0-hgK"/>
+                                            <constraint firstAttribute="height" constant="20" id="foo-el-yNz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="230" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRY-Zq-Jel">
+                                <rect key="frame" x="345" y="499" width="32" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="Ge3-FD-8qV"/>
+                                    <constraint firstAttribute="height" constant="20" id="P97-fE-O0D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="230" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orX-bg-ka3">
+                                <rect key="frame" x="345" y="610" width="32" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="R8P-H5-brQ"/>
+                                    <constraint firstAttribute="width" constant="32" id="wdZ-8J-ceX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZg-ad-xSA">
+                                <rect key="frame" x="150.5" y="282" width="113.5" height="27"/>
+                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5vE-9a-6dY" firstAttribute="top" secondItem="xZg-ad-xSA" secondAttribute="bottom" constant="170" id="1kc-8F-AWe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NRL-89-u6z" secondAttribute="trailing" id="2J8-Xy-N9I"/>
                             <constraint firstItem="NRL-89-u6z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9fK-jG-yUB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UPW-c9-tab" secondAttribute="bottom" constant="57" id="AP4-Jz-81a"/>
-                            <constraint firstItem="f1U-UC-Few" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LQa-2M-h58"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="76o-YQ-0Bq" secondAttribute="trailing" constant="37" id="9oP-9u-Zs1"/>
+                            <constraint firstItem="sLl-XO-HiN" firstAttribute="top" secondItem="5vE-9a-6dY" secondAttribute="bottom" constant="56" id="Bz8-YD-ZVr"/>
+                            <constraint firstItem="orX-bg-ka3" firstAttribute="top" secondItem="QRY-Zq-Jel" secondAttribute="bottom" constant="91" id="Dt1-SG-8my"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="orX-bg-ka3" secondAttribute="trailing" constant="37" id="GTk-SP-ZhV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lJm-HC-TJ4" secondAttribute="bottom" constant="106" id="K99-yN-hrS"/>
+                            <constraint firstItem="xZg-ad-xSA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LxW-RO-KaE"/>
                             <constraint firstItem="NRL-89-u6z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MH9-Ea-Hz1"/>
                             <constraint firstAttribute="bottom" secondItem="NRL-89-u6z" secondAttribute="bottom" id="O8C-nY-ZKw"/>
-                            <constraint firstItem="UPW-c9-tab" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TrQ-hH-nr7"/>
-                            <constraint firstItem="Wal-cD-IYc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="107" id="Vxm-Sx-hLj"/>
-                            <constraint firstItem="f1U-UC-Few" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YLE-5R-kyS"/>
-                            <constraint firstItem="Wal-cD-IYc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gdN-Sf-BoP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UPW-c9-tab" secondAttribute="trailing" constant="162" id="yxn-zJ-YLX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UPW-c9-tab" secondAttribute="trailing" constant="20" id="Xdx-tO-Vf9"/>
+                            <constraint firstItem="5vE-9a-6dY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="crG-JA-gfE"/>
+                            <constraint firstItem="76o-YQ-0Bq" firstAttribute="leading" secondItem="lJm-HC-TJ4" secondAttribute="trailing" constant="8" symbolic="YES" id="gUI-Ho-Dg0"/>
+                            <constraint firstItem="76o-YQ-0Bq" firstAttribute="top" secondItem="orX-bg-ka3" secondAttribute="bottom" constant="90" id="j9r-Bt-Yr3"/>
+                            <constraint firstItem="lJm-HC-TJ4" firstAttribute="top" secondItem="sLl-XO-HiN" secondAttribute="bottom" constant="56" id="mMy-nc-lGz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="76o-YQ-0Bq" secondAttribute="bottom" constant="122" id="pCb-h6-7cQ"/>
+                            <constraint firstItem="orX-bg-ka3" firstAttribute="leading" secondItem="sLl-XO-HiN" secondAttribute="trailing" constant="2" id="pXv-2G-kwl"/>
+                            <constraint firstItem="UPW-c9-tab" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="qeA-Fn-KaO"/>
+                            <constraint firstItem="QRY-Zq-Jel" firstAttribute="leading" secondItem="5vE-9a-6dY" secondAttribute="trailing" constant="8" symbolic="YES" id="tjw-5r-7go"/>
+                            <constraint firstItem="sLl-XO-HiN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wpZ-5h-oS8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QRY-Zq-Jel" secondAttribute="trailing" constant="37" id="yX8-qu-Ae0"/>
+                            <constraint firstItem="lJm-HC-TJ4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zTM-1e-W5p"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bJP-az-RuB"/>
-                    <connections>
-                        <outlet property="addMacrosButton" destination="lJu-wH-feS" id="uxq-Z6-VqY"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,6 +206,11 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgTopPurple" translatesAutoresizingMaskIntoConstraints="NO" id="eE7-LF-Ar3">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9eQ-v0-XH4">
+                                <rect key="frame" x="72" y="158" width="282" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NII-jf-7YV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -116,8 +232,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Epa-47-siw" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hVQ-5m-QT1">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="hVQ-5m-QT1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.34001901179999999" green="0.27012226810000001" blue="0.7607843876" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -142,7 +258,6 @@
     <resources>
         <image name="bgBottomPurple" width="333.33334350585938" height="686.33331298828125"/>
         <image name="bgTopPurple" width="1080" height="1920"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
