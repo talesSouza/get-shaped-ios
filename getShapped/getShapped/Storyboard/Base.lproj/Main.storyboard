@@ -407,7 +407,7 @@
                         <outlet property="activityLevelPickerView" destination="bNb-vo-7Ae" id="XSt-C1-ZqT"/>
                         <outlet property="ageTextField" destination="R7b-na-2pL" id="eam-xY-S5S"/>
                         <outlet property="firstNameTextField" destination="2dP-2U-AUj" id="5Fx-9c-hwB"/>
-                        <outlet property="genderSegmentedControl" destination="50j-8K-vsY" id="9YP-sA-e0E"/>
+                        <outlet property="genderSegmentedControl" destination="50j-8K-vsY" id="Xqc-j0-JeE"/>
                         <outlet property="goalsButton" destination="1WZ-cu-A0N" id="MkZ-AT-IUN"/>
                         <outlet property="heightTextField" destination="XGC-gx-yjH" id="IIn-8f-jRd"/>
                         <outlet property="imcLabel" destination="p7K-vh-q4G" id="dFZ-fK-2ts"/>

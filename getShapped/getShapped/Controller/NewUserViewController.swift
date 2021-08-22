@@ -39,21 +39,54 @@ extension NewUserViewController {
 
 // MARK: - Methods
 extension NewUserViewController {
-    private func setBMI(bmi: Double) {
-        imcLabel.text = "your BMI is: \(bmi)"
-    }
-    
     private func checkTextFields() -> Bool {
         for textField in textFields {
             if textField.text == nil { return false }
         }
         return true
     }
+    
+    private func setBMI(bmi: Double) {
+        imcLabel.text = "your BMI is: \(String(format: "%.0f", bmi))"
+        imcLabel.isHidden = false
+    }
+    
+    private func checkGender() -> String {
+        if genderSegmentedControl.selectedSegmentIndex == 1 {
+            let tdee = newUser.getTDEE(gender: .female)
+            return "Your TDEE is: \(tdee)"
+        }
+        let tdee = newUser.getTDEE(gender: .male)
+        return "Your TDEE is: \(tdee)"
+    }
+    
+    private func createNewUser() {
+        let newUser = User()
+        if let name = firstNameTextField.text,
+           let age = ageTextField.text,
+           let age = Double(age),
+           let height = heightTextField.text,
+           let height = Double(height),
+           let weight = weightTextField.text,
+           let weight = Double(weight) {
+            newUser.name = name
+            newUser.age = age
+            newUser.height = height
+            newUser.weight = weight
+            
+            tdeeLabel.text = checkGender()
+        }
+    }
+    
+    
 }
+
+
+
 
 // MARK: - IBActions
 extension NewUserViewController {
-    @IBAction func goalsTouchUpInside(sender: UIButton) {
+    @IBAction func goalsTouchUpInside(_ sender: UIButton) {
     }
 }
 
@@ -61,7 +94,8 @@ extension NewUserViewController {
 extension NewUserViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if checkTextFields() {
-            let newUser = User()
+            createNewUser()
+            setBMI(bmi: newUser.getBMI())
         }
         return true
     }
