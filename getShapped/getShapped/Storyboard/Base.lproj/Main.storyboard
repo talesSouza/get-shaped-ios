@@ -231,6 +231,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="RTr-Ab-yz0" id="FZR-Ba-vdg"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -256,6 +259,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="RTr-Ab-yz0" id="7v3-l9-e94"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -291,6 +297,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="RTr-Ab-yz0" id="3q9-Ds-Bdj"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -312,6 +321,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="RTr-Ab-yz0" id="dmq-DU-ycH"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -450,22 +462,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="0Wc-xh-jqG">
-                                <rect key="frame" x="66.5" y="590.5" width="281.5" height="72"/>
+                                <rect key="frame" x="66" y="590.5" width="282" height="72"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gLT-nv-93P">
-                                        <rect key="frame" x="0.0" y="0.0" width="50.5" height="72"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="72"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hje-Vc-58j">
-                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="23"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="50.5" id="Fe2-qq-1Ja"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="230" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBh-nX-zZw">
-                                                <rect key="frame" x="0.0" y="31" width="50.5" height="41"/>
+                                                <rect key="frame" x="0.0" y="31" width="51" height="41"/>
                                                 <color key="backgroundColor" red="0.34001901179999999" green="0.27012226810000001" blue="0.7607843876" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="41" id="0VO-nE-qJ5"/>
@@ -478,7 +487,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DxO-4S-gdx">
-                                        <rect key="frame" x="110.5" y="0.0" width="51" height="72"/>
+                                        <rect key="frame" x="111" y="0.0" width="51" height="72"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Fat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDh-Xt-WkV">
                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="23"/>
@@ -500,7 +509,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="StH-UN-CRV">
-                                        <rect key="frame" x="221.5" y="0.0" width="60" height="72"/>
+                                        <rect key="frame" x="222" y="0.0" width="60" height="72"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glp-gz-xrR">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="23"/>
