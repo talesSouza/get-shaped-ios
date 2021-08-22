@@ -13,11 +13,12 @@ class NewUserViewController: UIViewController {
     @IBOutlet weak var imcLabel: UILabel!
     @IBOutlet weak var activityLevelPickerView: UIPickerView!
     @IBOutlet weak var tdeeLabel: UILabel!
+    @IBOutlet weak var goalsButton: UIButton!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        goalsButton.setupBorder()
     }
 }
 
