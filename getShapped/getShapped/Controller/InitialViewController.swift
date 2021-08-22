@@ -1,9 +1,6 @@
 import UIKit
 
 class InitialViewController: UIViewController {
-
-    // MARK: - IBOutlets
-    @IBOutlet weak var addMacrosButton: UIButton!
     
     // MARK: - Life cycle
     override func viewDidLoad() {
