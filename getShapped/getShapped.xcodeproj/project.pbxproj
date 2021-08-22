@@ -17,6 +17,7 @@
 		1CBA8C9526D19D43000A0BD5 /* getShappedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA8C9426D19D43000A0BD5 /* getShappedUITests.swift */; };
 		1CBA8CA726D1AF4C000A0BD5 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA8CA626D1AF4C000A0BD5 /* NewUserViewController.swift */; };
 		1CBA8CAA26D1E5B7000A0BD5 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA8CA926D1E5B7000A0BD5 /* UIView+Extensions.swift */; };
+		1CBA8CAC26D1F94D000A0BD5 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA8CAB26D1F94D000A0BD5 /* GoalsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1CBA8C9626D19D43000A0BD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CBA8CA626D1AF4C000A0BD5 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		1CBA8CA926D1E5B7000A0BD5 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		1CBA8CAB26D1F94D000A0BD5 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				1CBA8C7626D19D41000A0BD5 /* InitialViewController.swift */,
 				1CBA8CA626D1AF4C000A0BD5 /* NewUserViewController.swift */,
+				1CBA8CAB26D1F94D000A0BD5 /* GoalsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				1CBA8CA726D1AF4C000A0BD5 /* NewUserViewController.swift in Sources */,
 				1CBA8CAA26D1E5B7000A0BD5 /* UIView+Extensions.swift in Sources */,
 				1CBA8C7526D19D41000A0BD5 /* SceneDelegate.swift in Sources */,
+				1CBA8CAC26D1F94D000A0BD5 /* GoalsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
