@@ -5,6 +5,14 @@ enum Gender {
     case female
 }
 
+enum ActivityLevel: String, CaseIterable {
+    case highLevel = "High level"
+    case athletic = "Athletic"
+    case moderate = "Moderate"
+    case smooth = "Smooth"
+    case sedentary = "Sedentary"
+}
+
 class User {
     var name: String = ""
     var age: Double = 0
@@ -14,23 +22,36 @@ class User {
     var activityLvl: String = ""
     
     func getBMI() -> Double {
-        let weight = self.weight
-        let height = self.height
+        let weight = weight
+        let height = height
         
         let BMI = (Double(weight) / Double((height*height)))*10000
         return BMI
     }
     
-    func getTDEE(gender: Gender) -> Double {
+    func getTMB(gender: Gender) -> Double {
         switch gender {
         case .male:
-            let maleCalc = 66 + (13.7 * self.weight) + (5 * self.height) - (6.5 * self.age)
+            let maleCalc = 66 + (13.7 * weight) + (5 * height) - (6.5 * age)
             return maleCalc
         case .female:
-            let femaleCalc = (655 + (9.6 * self.weight) + (1.8 * self.height) - (4.7 * self.age))
+            let femaleCalc = (655 + (9.6 * weight) + (1.8 * height) - (4.7 * age))
             return femaleCalc
-        default:
-            return 0
+        }
+    }
+    
+    func getTDEE(activityLvl: ActivityLevel, tmb: Double) -> Double {
+        switch activityLvl {
+        case .highLevel:
+            return 1.9*tmb
+        case .athletic:
+            return 1.725*tmb
+        case .moderate:
+            return 1.55*tmb
+        case .smooth:
+            return 1.375*tmb
+        case .sedentary:
+            return 1.9*tmb
         }
     }
 }

@@ -229,6 +229,7 @@
                                                     <constraint firstAttribute="height" constant="32" id="70C-oT-FUr"/>
                                                     <constraint firstAttribute="width" constant="318" id="YD5-Ss-loe"/>
                                                 </constraints>
+                                                <color key="textColor" red="0.010806894379999999" green="0.2470019453" blue="0.29403592140000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -257,8 +258,9 @@
                                                             <constraint firstAttribute="width" constant="164" id="7C8-9I-9HL"/>
                                                             <constraint firstAttribute="height" constant="32" id="8cd-0y-C4R"/>
                                                         </constraints>
+                                                        <color key="textColor" red="0.010806894379999999" green="0.2470019453" blue="0.29403592140000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="RTr-Ab-yz0" id="7v3-l9-e94"/>
                                                         </connections>
@@ -283,6 +285,9 @@
                                                 </segments>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="selectedSegmentTintColor" systemColor="systemTealColor"/>
+                                                <connections>
+                                                    <action selector="changeGenderSegmentedColor" destination="RTr-Ab-yz0" eventType="valueChanged" id="780-YS-17K"/>
+                                                </connections>
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
@@ -295,8 +300,9 @@
                                                     <constraint firstAttribute="width" constant="318" id="Ixu-jX-Iu3"/>
                                                     <constraint firstAttribute="height" constant="32" id="qZw-W9-uN7"/>
                                                 </constraints>
+                                                <color key="textColor" red="0.010806894379999999" green="0.2470019453" blue="0.29403592140000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="RTr-Ab-yz0" id="3q9-Ds-Bdj"/>
                                                 </connections>
@@ -319,8 +325,9 @@
                                                     <constraint firstAttribute="width" constant="318" id="009-Qa-Bdn"/>
                                                     <constraint firstAttribute="height" constant="32" id="kbM-Rz-cKV"/>
                                                 </constraints>
+                                                <color key="textColor" red="0.010806894379999999" green="0.2470019453" blue="0.29403592140000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="RTr-Ab-yz0" id="dmq-DU-ycH"/>
                                                 </connections>
@@ -336,18 +343,16 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your IMC is: 23" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7K-vh-q4G">
-                                <rect key="frame" x="156" y="336" width="102" height="17.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNb-vo-7Ae">
-                                <rect key="frame" x="48" y="443" width="318" height="120"/>
+                                <rect key="frame" x="48" y="443" width="318" height="210"/>
                                 <color key="tintColor" systemColor="systemPurpleColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="bYQ-jQ-oET"/>
+                                    <constraint firstAttribute="height" constant="210" id="7ns-Xu-PCN"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="RTr-Ab-yz0" id="TJ7-4u-Ie6"/>
+                                    <outlet property="delegate" destination="RTr-Ab-yz0" id="9xj-ej-fSm"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACTIVITY LEVEL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4p-gy-RUI">
                                 <rect key="frame" x="150.5" y="417.5" width="113" height="17.5"/>
@@ -375,10 +380,30 @@
                                     <color key="titleColor" red="0.34001901179999999" green="0.27012226810000001" blue="0.7607843876" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="goalsTouchUpInside:" destination="RTr-Ab-yz0" eventType="touchUpInside" id="Lew-du-ESm"/>
                                     <action selector="goalsTouchUpInsideSender:" destination="RTr-Ab-yz0" eventType="touchUpInside" id="y2t-xD-NU3"/>
                                     <segue destination="BSX-wW-dMc" kind="show" id="bC0-MA-XUq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5E-2n-2d6">
+                                <rect key="frame" x="48" y="336" width="45" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="M6A-jv-ax9"/>
+                                    <constraint firstAttribute="height" constant="18" id="TBC-S4-YPY"/>
+                                </constraints>
+                                <state key="normal" title="TDEE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showTDEE:" destination="RTr-Ab-yz0" eventType="touchUpInside" id="zqv-xZ-ee2"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your IMC is: 23" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7K-vh-q4G">
+                                <rect key="frame" x="264" y="336" width="102" height="17.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NII-jf-7YV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -386,20 +411,23 @@
                             <constraint firstAttribute="bottom" secondItem="eE7-LF-Ar3" secondAttribute="bottom" id="1Qy-Ft-K5S"/>
                             <constraint firstItem="o4p-gy-RUI" firstAttribute="top" secondItem="p7K-vh-q4G" secondAttribute="bottom" constant="64" id="4ql-Zs-V5d"/>
                             <constraint firstItem="NII-jf-7YV" firstAttribute="trailing" secondItem="bNb-vo-7Ae" secondAttribute="trailing" constant="48" id="6W6-Sh-beF"/>
+                            <constraint firstItem="Z5E-2n-2d6" firstAttribute="top" secondItem="1xr-a3-0EI" secondAttribute="bottom" constant="8" symbolic="YES" id="7Sc-6t-hQy"/>
                             <constraint firstItem="bNb-vo-7Ae" firstAttribute="top" secondItem="o4p-gy-RUI" secondAttribute="bottom" constant="8" id="8Bu-53-9vf"/>
+                            <constraint firstItem="a59-fA-QUx" firstAttribute="top" secondItem="bNb-vo-7Ae" secondAttribute="bottom" constant="46" id="BtL-I5-6Ms"/>
                             <constraint firstItem="NII-jf-7YV" firstAttribute="trailing" secondItem="eE7-LF-Ar3" secondAttribute="trailing" id="HGx-Yd-THd"/>
+                            <constraint firstItem="NII-jf-7YV" firstAttribute="bottom" secondItem="1WZ-cu-A0N" secondAttribute="bottom" constant="53" id="IN8-sP-ER9"/>
                             <constraint firstItem="1xr-a3-0EI" firstAttribute="centerX" secondItem="Ijg-hu-ux1" secondAttribute="centerX" id="Jnc-g7-PWr"/>
                             <constraint firstItem="o4p-gy-RUI" firstAttribute="centerX" secondItem="Ijg-hu-ux1" secondAttribute="centerX" id="MGN-kY-6Od"/>
                             <constraint firstItem="eE7-LF-Ar3" firstAttribute="top" secondItem="Ijg-hu-ux1" secondAttribute="top" id="PYV-gF-aNa"/>
                             <constraint firstItem="eE7-LF-Ar3" firstAttribute="leading" secondItem="NII-jf-7YV" secondAttribute="leading" id="QHK-Ib-B7D"/>
+                            <constraint firstItem="Z5E-2n-2d6" firstAttribute="leading" secondItem="NII-jf-7YV" secondAttribute="leading" constant="48" id="RDm-2K-UcS"/>
                             <constraint firstItem="bNb-vo-7Ae" firstAttribute="leading" secondItem="NII-jf-7YV" secondAttribute="leading" constant="48" id="ZUN-ZT-R23"/>
-                            <constraint firstItem="p7K-vh-q4G" firstAttribute="centerX" secondItem="Ijg-hu-ux1" secondAttribute="centerX" id="b3b-EL-Vh9"/>
                             <constraint firstItem="1WZ-cu-A0N" firstAttribute="top" secondItem="a59-fA-QUx" secondAttribute="bottom" constant="30" id="gUn-b3-wuh"/>
-                            <constraint firstItem="a59-fA-QUx" firstAttribute="top" secondItem="bNb-vo-7Ae" secondAttribute="bottom" constant="136" id="hYw-zy-cwO"/>
                             <constraint firstItem="1xr-a3-0EI" firstAttribute="top" secondItem="NII-jf-7YV" secondAttribute="top" constant="12" id="jwp-6m-q3D"/>
                             <constraint firstItem="a59-fA-QUx" firstAttribute="centerX" secondItem="Ijg-hu-ux1" secondAttribute="centerX" id="oOs-TH-Rpa"/>
                             <constraint firstItem="1WZ-cu-A0N" firstAttribute="centerX" secondItem="Ijg-hu-ux1" secondAttribute="centerX" id="oWV-hD-CqM"/>
                             <constraint firstItem="p7K-vh-q4G" firstAttribute="top" secondItem="1xr-a3-0EI" secondAttribute="bottom" constant="8" symbolic="YES" id="pMO-ss-pFt"/>
+                            <constraint firstItem="NII-jf-7YV" firstAttribute="trailing" secondItem="p7K-vh-q4G" secondAttribute="trailing" constant="48" id="xL1-Ne-qAj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New user" largeTitleDisplayMode="always" id="nhK-YF-g8t"/>
@@ -411,6 +439,7 @@
                         <outlet property="goalsButton" destination="1WZ-cu-A0N" id="MkZ-AT-IUN"/>
                         <outlet property="heightTextField" destination="XGC-gx-yjH" id="IIn-8f-jRd"/>
                         <outlet property="imcLabel" destination="p7K-vh-q4G" id="dFZ-fK-2ts"/>
+                        <outlet property="tdeeButton" destination="Z5E-2n-2d6" id="JM1-gl-nN1"/>
                         <outlet property="tdeeLabel" destination="a59-fA-QUx" id="unz-c7-CO3"/>
                         <outlet property="weightTextField" destination="Qtb-ad-LBZ" id="q11-Jf-aRk"/>
                     </connections>
