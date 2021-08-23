@@ -15,7 +15,6 @@ class NewUserViewController: UIViewController {
     @IBOutlet weak var goalsButton: UIButton!
     
     // MARK: - Stored Properties
-    let newUser = User()
     
     // MARK: - Computed Properties
     var textFields: [UITextField] {
@@ -51,13 +50,13 @@ extension NewUserViewController {
         imcLabel.isHidden = false
     }
     
-    private func changeTDEELabel() -> String {
+    private func changeTDEELabel(user: User) -> String {
         if genderSegmentedControl.selectedSegmentIndex == 1 {
-            let tdee = newUser.getTDEE(gender: .female)
+            let tdee = user.getTDEE(gender: .female)
             tdeeLabel.isHidden = false
             return "Your TDEE is: \(tdee)"
         }
-        let tdee = newUser.getTDEE(gender: .male)
+        let tdee = user.getTDEE(gender: .male)
         tdeeLabel.isHidden = false
         return "Your TDEE is: \(tdee)"
     }
@@ -77,7 +76,7 @@ extension NewUserViewController {
             newUser.weight = weight
             
             setBMI(bmi: newUser.getBMI())
-            changeTDEELabel()
+            tdeeLabel.text = changeTDEELabel(user: newUser)
         }
     }
 }
