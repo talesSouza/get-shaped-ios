@@ -5,14 +5,6 @@ enum Gender {
     case female
 }
 
-enum ActivityLevel: String, CaseIterable {
-    case highLevel = "High level"
-    case athletic = "Athletic"
-    case moderate = "Moderate"
-    case smooth = "Smooth"
-    case sedentary = "Sedentary"
-}
-
 class User {
     var name: String = ""
     var age: Double = 0

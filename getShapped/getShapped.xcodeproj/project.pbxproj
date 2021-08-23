@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2FDF8126D447A100CD2EAE /* ActivityLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2FDF8026D447A100CD2EAE /* ActivityLevel.swift */; };
 		1C7C6EF026D29B4E001BF9D0 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7C6EEF26D29B4E001BF9D0 /* Macro.swift */; };
 		1C7C6EF226D29D24001BF9D0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7C6EF126D29D24001BF9D0 /* User.swift */; };
 		1CBA8C7326D19D41000A0BD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA8C7226D19D41000A0BD5 /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C2FDF8026D447A100CD2EAE /* ActivityLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevel.swift; sourceTree = "<group>"; };
 		1C7C6EEF26D29B4E001BF9D0 /* Macro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
 		1C7C6EF126D29D24001BF9D0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1CBA8C6F26D19D41000A0BD5 /* getShapped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = getShapped.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 			children = (
 				1C7C6EEF26D29B4E001BF9D0 /* Macro.swift */,
 				1C7C6EF126D29D24001BF9D0 /* User.swift */,
+				1C2FDF8026D447A100CD2EAE /* ActivityLevel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				1CBA8CA726D1AF4C000A0BD5 /* NewUserViewController.swift in Sources */,
 				1C7C6EF226D29D24001BF9D0 /* User.swift in Sources */,
 				1CBA8CAA26D1E5B7000A0BD5 /* UIView+Extensions.swift in Sources */,
+				1C2FDF8126D447A100CD2EAE /* ActivityLevel.swift in Sources */,
 				1CBA8C7526D19D41000A0BD5 /* SceneDelegate.swift in Sources */,
 				1CBA8CAC26D1F94D000A0BD5 /* GoalsViewController.swift in Sources */,
 			);
