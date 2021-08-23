@@ -51,7 +51,7 @@ extension NewUserViewController {
         imcLabel.isHidden = false
     }
     
-    private func checkGender() -> String {
+    private func changeTDEELabel() -> String {
         if genderSegmentedControl.selectedSegmentIndex == 1 {
             let tdee = newUser.getTDEE(gender: .female)
             return "Your TDEE is: \(tdee)"
@@ -64,25 +64,21 @@ extension NewUserViewController {
         let newUser = User()
         if let name = firstNameTextField.text,
            let age = ageTextField.text,
-           let age = Double(age),
            let height = heightTextField.text,
-           let height = Double(height),
            let weight = weightTextField.text,
+           let age = Double(age),
+           let height = Double(height),
            let weight = Double(weight) {
             newUser.name = name
             newUser.age = age
             newUser.height = height
             newUser.weight = weight
             
-            tdeeLabel.text = checkGender()
+            setBMI(bmi: newUser.getBMI())
+            tdeeLabel.text = changeTDEELabel()
         }
     }
-    
-    
 }
-
-
-
 
 // MARK: - IBActions
 extension NewUserViewController {
@@ -95,7 +91,6 @@ extension NewUserViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if checkTextFields() {
             createNewUser()
-            setBMI(bmi: newUser.getBMI())
         }
         return true
     }
