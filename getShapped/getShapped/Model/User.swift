@@ -24,10 +24,10 @@ class User {
     func getTDEE(gender: Gender) -> Double {
         switch gender {
         case .male:
-            let maleCalc = 66 + (13.7 * weight) + (5 * height) - (6.5 * age)
+            let maleCalc = 66 + (13.7 * self.weight) + (5 * self.height) - (6.5 * self.age)
             return maleCalc
         case .female:
-            let femaleCalc = 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age)
+            let femaleCalc = (655 + (9.6 * self.weight) + (1.8 * self.height) - (4.7 * self.age))
             return femaleCalc
         default:
             return 0

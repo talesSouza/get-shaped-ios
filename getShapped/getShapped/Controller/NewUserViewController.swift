@@ -54,9 +54,11 @@ extension NewUserViewController {
     private func changeTDEELabel() -> String {
         if genderSegmentedControl.selectedSegmentIndex == 1 {
             let tdee = newUser.getTDEE(gender: .female)
+            tdeeLabel.isHidden = false
             return "Your TDEE is: \(tdee)"
         }
         let tdee = newUser.getTDEE(gender: .male)
+        tdeeLabel.isHidden = false
         return "Your TDEE is: \(tdee)"
     }
     
@@ -75,7 +77,7 @@ extension NewUserViewController {
             newUser.weight = weight
             
             setBMI(bmi: newUser.getBMI())
-            tdeeLabel.text = changeTDEELabel()
+            changeTDEELabel()
         }
     }
 }
