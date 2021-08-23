@@ -40,18 +40,20 @@ class User {
         }
     }
     
-    func getTDEE(activityLvl: ActivityLevel, tmb: Double) -> Double {
+    func getTDEE(activityLvl: ActivityLevel.RawValue, tmb: Double) -> Double {
         switch activityLvl {
-        case .highLevel:
+        case "High level":
             return 1.9*tmb
-        case .athletic:
+        case "Athletic":
             return 1.725*tmb
-        case .moderate:
+        case "Moderate":
             return 1.55*tmb
-        case .smooth:
+        case "Smooth":
             return 1.375*tmb
-        case .sedentary:
-            return 1.9*tmb
+        case "Sedentary":
+            return 1.2*tmb
+        default:
+            return 0
         }
     }
 }

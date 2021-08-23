@@ -17,7 +17,7 @@ class NewUserViewController: UIViewController {
     
     // MARK: - Stored Properties
     let activities: [String] = ActivityLevel.allCases.map { $0.rawValue }
-    var activity: String = ""
+    var activityNumber: Int = 0
     
     // MARK: - Computed Properties
     var textFields: [UITextField] {
@@ -49,9 +49,9 @@ extension NewUserViewController {
         let tdee: Double
         switch genderSegmentedControl.selectedSegmentIndex {
         case 1:
-            tdee = user.getTMB(gender: .female)
+            tdee = user.getTDEE(activityLvl: activities[activityNumber], tmb: user.getTMB(gender: .female))
         default:
-            tdee = user.getTMB(gender: .male)
+            tdee = user.getTDEE(activityLvl: activities[activityNumber], tmb: user.getTMB(gender: .male))
         }
         tdeeLabel.isHidden = false
         return "Your TDEE is: \(String(format: "%.0f", tdee))"
@@ -127,7 +127,8 @@ extension NewUserViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        activity = "\(activities[row])"
+        activityNumber = row
+        enableNewUser()
     }
 }
 
