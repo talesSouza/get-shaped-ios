@@ -17,6 +17,7 @@ class NewUserViewController: UIViewController {
     
     // MARK: - Stored Properties
     let activities: [String] = ActivityLevel.allCases.map { $0.rawValue }
+    var activity: String = ""
     
     // MARK: - Computed Properties
     var textFields: [UITextField] {
@@ -108,10 +109,6 @@ extension NewUserViewController {
         if genderSegmentedControl.selectedSegmentIndex == 1 { genderSegmentedControl.selectedSegmentTintColor = .systemPurple
         } else { genderSegmentedControl.selectedSegmentTintColor = .systemTeal}
     }
-    
-    @IBAction func changeActivityLevel(_ sender: UIPickerView) {
-        
-    }
 }
 
 // MARK: - UITextFieldDelegate
@@ -127,6 +124,10 @@ extension NewUserViewController: UITextFieldDelegate {
 extension NewUserViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return activities[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        activity = "\(activities[row])"
     }
 }
 
