@@ -1,6 +1,6 @@
 import Foundation
 
 struct Macro {
-    let name: String = ""
-    var qty: Int = 0
+    let name: String
+    var qty: Int
 }

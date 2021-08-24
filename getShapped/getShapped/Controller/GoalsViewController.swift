@@ -9,8 +9,8 @@ class GoalsViewController: UIViewController {
     @IBOutlet weak var fatQtyLabel: UILabel!
     @IBOutlet weak var proteinQtyLabel: UILabel!
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 }

@@ -16,8 +16,9 @@ class NewUserViewController: UIViewController {
     @IBOutlet weak var goalsButton: UIButton!
     
     // MARK: - Stored Properties
-    let activities: [String] = ActivityLevel.allCases.map { $0.rawValue }
-    var activity: Int = 0
+    let activities: [ActivityLevel] = ActivityLevel.allCases
+    var selectedActivity: ActivityLevel?
+    var user: User?
     
     // MARK: - Computed Properties
     var textFields: [UITextField] {
@@ -34,71 +35,60 @@ class NewUserViewController: UIViewController {
 
 // MARK: - Setup
 extension NewUserViewController {
+    
     private func setUI() {
         textFields.forEach{ $0.resignFirstResponder() }
         goalsButton.setupBorder()
         tdeeButton.setupBorder(borderColor: .white)
     }
     
-    private func setBMI(bmi: Double) {
-        imcLabel.text = "your BMI is: \(String(format: "%.0f", bmi))"
+    private func setBMILabel() {
+        guard let user = user else { return }
+        imcLabel.text = "your BMI is: \(String(format: "%.0f", user.bmi))"
         imcLabel.isHidden = false
     }
     
-    private func setTDEELabel(user: User) -> String {
-        let tdee: Double
-        switch genderSegmentedControl.selectedSegmentIndex {
-        case 1:
-            let femaleTMB = user.getTMB(gender: .female)
-            tdee = user.getTDEE(activityLvl: activities[activity], tmb: femaleTMB)
-        default:
-            tdee = user.getTDEE(activityLvl: activities[activity], tmb: user.getTMB(gender: .male))
-        }
-        tdeeLabel.isHidden = false
-        return "Your TDEE is: \(String(format: "%.0f", tdee))"
+    private func setTDEELabel() {
+        guard let user = user else { return }
+        tdeeLabel.text = "Your TDEE is: \(String(format: "%.0f", user.tdee))"
     }
 }
 
 // MARK: - Methods
 extension NewUserViewController {
+    
     func endEditing() {
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
     
-    private func checkTextFields() -> Bool {
-        for textField in textFields {
-            if textField.text == nil { return false }
-        }
-        return true
-    }
-    
     private func createNewUser() {
-        let newUser = User()
-        if let name = firstNameTextField.text,
-           let age = ageTextField.text, let age = Double(age),
-           let height = heightTextField.text, let height = Double(height),
-           let weight = weightTextField.text, let weight = Double(weight) {
-            newUser.name = name
-            newUser.age = age
-            newUser.height = height
-            newUser.weight = weight
-            
-            setBMI(bmi: newUser.getBMI())
-            tdeeLabel.text = setTDEELabel(user: newUser)
-        }
-    }
-    
-    private func enableNewUser() {
-        if checkTextFields() {
-            createNewUser()
-            goalsButton.isEnabled = false
-        }
+        guard let name = firstNameTextField.text,
+              let ageText = ageTextField.text, let age = Double(ageText),
+              let heightText = heightTextField.text, let height = Double(heightText),
+              let weightText = weightTextField.text, let weight = Double(weightText),
+              let gender = Gender(rawValue: genderSegmentedControl.selectedSegmentIndex),
+              let activityLvl = selectedActivity else { return }
+        
+        user = User(name: name,
+                    age: age,
+                    weight: weight,
+                    height: height,
+                    gender: gender,
+                    activityLvl: activityLvl)
+        setBMILabel()
+        setTDEELabel()
+        goalsButton.isEnabled = false
     }
 }
 
 // MARK: - IBActions
 extension NewUserViewController {
+    
+    @IBAction private func createNewUserTouchUpInside(_ sender: UIButton) {
+        createNewUser()
+    }
+    
     @IBAction func showTDEE(_ sender: UIButton) {
         enableNewUser()
     }
@@ -107,8 +97,7 @@ extension NewUserViewController {
     }
     
     @IBAction func changeGenderSegmentedColor() {
-        if genderSegmentedControl.selectedSegmentIndex == 1 { genderSegmentedControl.selectedSegmentTintColor = .systemPurple
-        } else { genderSegmentedControl.selectedSegmentTintColor = .systemTeal}
+        genderSegmentedControl.selectedSegmentTintColor = genderSegmentedControl.selectedSegmentIndex == 0 ? .systemTeal : .systemPurple
     }
 }
 
@@ -121,19 +110,19 @@ extension NewUserViewController: UITextFieldDelegate {
     }
 }
 
-// MARK: - UITextFieldDelegate
+// MARK: - UIPickerViewDelegate
 extension NewUserViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return activities[row]
+        return activities[row].rawValue
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        activity = row
+        selectedActivity = activities[row]
         enableNewUser()
     }
 }
 
-// MARK: - UITextFieldDelegate
+// MARK: - UIPickerViewDataSource
 extension NewUserViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
