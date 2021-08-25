@@ -28,57 +28,74 @@ class NewUserViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
+        setButton()
         endEditing()
+    }
+}
+
+// MARK: - Navigation
+extension NewUserViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? GoalsViewController,
+           let user = user {
+            vc.user = user
+        }
     }
 }
 
 // MARK: - Setup
 extension NewUserViewController {
     
-    private func setUI() {
+    private func setTextField() {
         textFields.forEach{ $0.resignFirstResponder() }
+    }
+    
+    private func setButton() {
         goalsButton.setupBorder()
         tdeeButton.setupBorder(borderColor: .white)
     }
     
     private func setBMILabel() {
-        guard let user = user else { return }
-        imcLabel.text = "your BMI is: \(String(format: "%.0f", user.bmi))"
-        imcLabel.isHidden = false
+        if let user = user {
+            imcLabel.text = "your BMI is: \(String(format: "%.0f", user.bmi))"
+            imcLabel.isHidden = false
+        }
     }
     
     private func setTDEELabel() {
-        guard let user = user else { return }
-        tdeeLabel.text = "Your TDEE is: \(String(format: "%.0f", user.tdee))"
+        if let user = user {
+            tdeeLabel.text = "Your TDEE is: \(String(format: "%.0f", user.tdee))"
+            tdeeLabel.isHidden = false
+        }
+    }
+    
+    func endEditing() {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
 }
 
 // MARK: - Methods
 extension NewUserViewController {
     
-    func endEditing() {
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tap)
-    }
-    
     private func createNewUser() {
-        guard let name = firstNameTextField.text,
-              let ageText = ageTextField.text, let age = Double(ageText),
-              let heightText = heightTextField.text, let height = Double(heightText),
-              let weightText = weightTextField.text, let weight = Double(weightText),
-              let gender = Gender(rawValue: genderSegmentedControl.selectedSegmentIndex),
-              let activityLvl = selectedActivity else { return }
-        
-        user = User(name: name,
-                    age: age,
-                    weight: weight,
-                    height: height,
-                    gender: gender,
-                    activityLvl: activityLvl)
-        setBMILabel()
-        setTDEELabel()
-        goalsButton.isEnabled = false
+        if let name = firstNameTextField.text,
+           let ageText = ageTextField.text, let age = Double(ageText),
+           let heightText = heightTextField.text, let height = Double(heightText),
+           let weightText = weightTextField.text, let weight = Double(weightText),
+           let gender = Gender(rawValue: genderSegmentedControl.selectedSegmentIndex),
+           let activityLvl = selectedActivity {
+            
+            user = User(name: name,
+                        age: age,
+                        weight: weight,
+                        height: height,
+                        gender: gender,
+                        activityLvl: activityLvl)
+            setBMILabel()
+            setTDEELabel()
+            goalsButton.isEnabled = false
+        }
     }
 }
 
@@ -87,10 +104,7 @@ extension NewUserViewController {
     
     @IBAction private func createNewUserTouchUpInside(_ sender: UIButton) {
         createNewUser()
-    }
-    
-    @IBAction func showTDEE(_ sender: UIButton) {
-        enableNewUser()
+        goalsButton.isEnabled = true
     }
     
     @IBAction func goalsTouchUpInside(_ sender: UIButton) {
@@ -104,8 +118,7 @@ extension NewUserViewController {
 // MARK: - UITextFieldDelegate
 extension NewUserViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        setUI()
-        enableNewUser()
+        setTextField()
         return true
     }
 }
@@ -118,7 +131,6 @@ extension NewUserViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedActivity = activities[row]
-        enableNewUser()
     }
 }
 
