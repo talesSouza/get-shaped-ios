@@ -8,12 +8,14 @@ class NewUserViewController: UIViewController {
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
     
-    @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var imcLabel: UILabel!
-    @IBOutlet weak var activityLevelPickerView: UIPickerView!
-    @IBOutlet weak var tdeeLabel: UILabel!
-    @IBOutlet weak var tdeeButton: UIButton!
+    @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var goalsButton: UIButton!
+    
+    @IBOutlet weak var imcLabel: UILabel!
+    @IBOutlet weak var tdeeLabel: UILabel!
+    
+    @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var activityLevelPickerView: UIPickerView!
     
     // MARK: - Stored Properties
     let activities: [ActivityLevel] = ActivityLevel.allCases
@@ -51,7 +53,8 @@ extension NewUserViewController {
     }
     
     private func setButton() {
-        goalsButton.setupBorder()
+        goalsButton.setupBorder(borderWidth: 2)
+        
     }
     
     private func setBMILabel() {
@@ -64,7 +67,9 @@ extension NewUserViewController {
     private func setTDEELabel() {
         if let user = user {
             tdeeLabel.text = "Your TDEE is: \(String(format: "%.0f", user.tdee))"
+            
             tdeeLabel.isHidden = false
+            infoButton.isHidden = false
         }
     }
     
@@ -100,16 +105,22 @@ extension NewUserViewController {
 // MARK: - IBActions
 extension NewUserViewController {
     
-    @IBAction func goalsTouchUpInside(_ sender: UIButton) {
-        createNewUser()
-        if user != nil {
-        performSegue(withIdentifier: "goToGoals", sender: nil)
-        }
-    }
-    
     @IBAction func changeGenderSegmentedColor() {
         genderSegmentedControl.selectedSegmentTintColor = genderSegmentedControl.selectedSegmentIndex == 0 ? .systemTeal : .systemPurple
         createNewUser()
+    }
+    
+    @IBAction func presentInfoTouchUpInside(_ sender: UIButton) {
+        let alert = UIAlertController(title: "TDEE", message: "is an estimation of how many calories you burn per day when exercise is taken into account.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Got it!", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func goalsTouchUpInside(_ sender: UIButton) {
+        createNewUser()
+        if user != nil {
+            performSegue(withIdentifier: "goToGoals", sender: nil)
+        }
     }
 }
 
