@@ -344,7 +344,7 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <pickerView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNb-vo-7Ae">
+                            <pickerView autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNb-vo-7Ae">
                                 <rect key="frame" x="48" y="370" width="318" height="178"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemPurpleColor"/>
@@ -468,8 +468,8 @@
                                     <segment title="preserve"/>
                                     <segment title="stronger"/>
                                 </segments>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="selectedSegmentTintColor" red="0.69131295083566946" green="0.57613821737752491" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                <color key="selectedSegmentTintColor" red="0.47726316023964249" green="0.79963458380110675" blue="0.80954723016288654" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="setChoiceValueChanged:" destination="BSX-wW-dMc" eventType="valueChanged" id="ZVC-gv-LZZ"/>
                                 </connections>
@@ -561,6 +561,7 @@
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r9c-b6-qtH">
                                 <rect key="frame" x="135" y="318" width="144" height="119"/>
+                                <color key="tintColor" red="0.28766788713084007" green="0.43184619480414027" blue="0.64130146234226815" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="119" id="6AA-lo-AaJ"/>
                                     <constraint firstAttribute="width" constant="144" id="djX-6K-Jdd"/>
