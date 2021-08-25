@@ -17,7 +17,7 @@ class NewUserViewController: UIViewController {
     
     // MARK: - Stored Properties
     let activities: [ActivityLevel] = ActivityLevel.allCases
-    var selectedActivity: ActivityLevel?
+    var selectedActivity: ActivityLevel? = .highLevel
     var user: User?
     
     // MARK: - Computed Properties
@@ -52,7 +52,6 @@ extension NewUserViewController {
     
     private func setButton() {
         goalsButton.setupBorder()
-        tdeeButton.setupBorder(borderColor: .white)
     }
     
     private func setBMILabel() {
@@ -94,7 +93,6 @@ extension NewUserViewController {
                         activityLvl: activityLvl)
             setBMILabel()
             setTDEELabel()
-            goalsButton.isEnabled = false
         }
     }
 }
@@ -102,16 +100,16 @@ extension NewUserViewController {
 // MARK: - IBActions
 extension NewUserViewController {
     
-    @IBAction private func createNewUserTouchUpInside(_ sender: UIButton) {
-        createNewUser()
-        goalsButton.isEnabled = true
-    }
-    
     @IBAction func goalsTouchUpInside(_ sender: UIButton) {
+        createNewUser()
+        if user != nil {
+        performSegue(withIdentifier: "goToGoals", sender: nil)
+        }
     }
     
     @IBAction func changeGenderSegmentedColor() {
         genderSegmentedControl.selectedSegmentTintColor = genderSegmentedControl.selectedSegmentIndex == 0 ? .systemTeal : .systemPurple
+        createNewUser()
     }
 }
 
@@ -119,6 +117,7 @@ extension NewUserViewController {
 extension NewUserViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         setTextField()
+        createNewUser()
         return true
     }
 }
@@ -131,6 +130,7 @@ extension NewUserViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedActivity = activities[row]
+        createNewUser()
     }
 }
 

@@ -15,5 +15,16 @@ enum Choices: Int {
             return 500
         }
     }
+    
+    var name: String {
+        switch self {
+        case .thinner:
+            return "thinner"
+        case .preserve:
+            return "preserve"
+        case .stronger:
+            return "stronger"
+        }
+    }
 }
 
