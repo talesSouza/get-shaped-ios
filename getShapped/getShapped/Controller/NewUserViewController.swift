@@ -81,7 +81,6 @@ extension NewUserViewController {
 
 // MARK: - Methods
 extension NewUserViewController {
-    
     private func createNewUser() {
         if let name = firstNameTextField.text,
            let ageText = ageTextField.text, let age = Double(ageText),
@@ -104,7 +103,6 @@ extension NewUserViewController {
 
 // MARK: - IBActions
 extension NewUserViewController {
-    
     @IBAction func changeGenderSegmentedColor() {
         genderSegmentedControl.selectedSegmentTintColor = genderSegmentedControl.selectedSegmentIndex == 0 ? .systemTeal : .systemPurple
         createNewUser()

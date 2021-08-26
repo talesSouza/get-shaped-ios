@@ -1,10 +1,11 @@
 import Foundation
 
-enum Macro: Int {
-    case carb = 0
-    case fat = 1
-    case protein = 2
+enum Macro: Double {
+    case carb
+    case fat
+    case protein
     
+    // MARK: - Computed Properties
     var percentage: Double {
         switch self {
         case .carb:
@@ -27,15 +28,17 @@ enum Macro: Int {
         }
     }
     
-    var multiplier: Double {
+    var kcalMultiplier: Double {
         kcalFactor()
     }
     
+    // MARK: - Private Methods
     private func kcalFactor() -> Double {
        return percentage/kcal
     }
     
-    func macrosCalculated(calories: Double) -> Double {
-        return calories * multiplier
+    // MARK: - Public Methods
+    func getMacrosCalculated(calories: Double) -> Double {
+        return calories * kcalMultiplier
     }
 }

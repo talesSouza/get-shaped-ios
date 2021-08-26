@@ -5,6 +5,7 @@ enum Choices: Int {
     case preserve = 1
     case stronger = 2
     
+    // MARK: - Computed Properties
     var calc: Double {
         switch self {
         case .thinner:

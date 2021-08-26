@@ -4,8 +4,8 @@ class GoalsViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var goalSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var caloriesLabel: UILabel!
     @IBOutlet weak var centerImage: UIImageView!
+    @IBOutlet weak var caloriesLabel: UILabel!
     @IBOutlet weak var carbsQtyLabel: UILabel!
     @IBOutlet weak var fatQtyLabel: UILabel!
     @IBOutlet weak var proteinQtyLabel: UILabel!
@@ -29,23 +29,18 @@ class GoalsViewController: UIViewController {
 
 // MARK: - Setup
 extension GoalsViewController {
-    
     private func setLabel() {
         if let calories = totalCalories {
             caloriesLabel.text = "So you have to eat \(String(format: "%.0f", calories))"
         }
     }
     
-    //aqui tenho q pensar em como vou passar essas infos depois.
-    private func setMacroDistribution() {
+    //aqui o ideal seria criar uma array pros itens ficarem guardados
+    private func setMacroLabels() {
         if let totalCalories = totalCalories {
-            let carbQty = Macro.carb.macrosCalculated(calories: totalCalories)
-            let fatQty = Macro.fat.macrosCalculated(calories: totalCalories)
-            let proteinQty = Macro.protein.macrosCalculated(calories: totalCalories)
-            
-            carbsQtyLabel.text = "\(String(format: "%.0f", carbQty))"
-            fatQtyLabel.text = "\(String(format: "%.0f", fatQty))"
-            proteinQtyLabel.text = "\(String(format: "%.0f", proteinQty))"
+            carbsQtyLabel.text = "\(String(format: "%.0f", Macro.carb.getMacrosCalculated(calories: totalCalories)))"
+            fatQtyLabel.text = "\(String(format: "%.0f", Macro.fat.getMacrosCalculated(calories: totalCalories)))"
+            proteinQtyLabel.text = "\(String(format: "%.0f", Macro.protein.getMacrosCalculated(calories: totalCalories)))"
         }
     }
     
@@ -56,7 +51,7 @@ extension GoalsViewController {
             totalCalories = user.tdee + choice.calc
             centerImage.image = UIImage(named: "\(choice.name)")
             setLabel()
-            setMacroDistribution()
+            setMacroLabels()
         }
     }
 }
