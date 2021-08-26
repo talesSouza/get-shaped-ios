@@ -36,11 +36,12 @@ extension GoalsViewController {
         }
     }
     
+    //aqui tenho q pensar em como vou passar essas infos depois.
     private func setMacroDistribution() {
         if let totalCalories = totalCalories {
-            let carbQty = totalCalories * Macro.carb.multiplier
-            let fatQty = totalCalories * Macro.fat.multiplier
-            let proteinQty = totalCalories * Macro.protein.multiplier
+            let carbQty = Macro.carb.macrosCalculated(calories: totalCalories)
+            let fatQty = Macro.fat.macrosCalculated(calories: totalCalories)
+            let proteinQty = Macro.protein.macrosCalculated(calories: totalCalories)
             
             carbsQtyLabel.text = "\(String(format: "%.0f", carbQty))"
             fatQtyLabel.text = "\(String(format: "%.0f", fatQty))"

@@ -30,15 +30,12 @@ enum Macro: Int {
     var multiplier: Double {
         kcalFactor()
     }
-    var macrosCalculated: Double {
-        macrosCalculated(calories: 0)
-    }
     
     private func kcalFactor() -> Double {
        return percentage/kcal
     }
     
-    private func macrosCalculated(calories: Double) -> Double {
+    func macrosCalculated(calories: Double) -> Double {
         return calories * multiplier
     }
 }
