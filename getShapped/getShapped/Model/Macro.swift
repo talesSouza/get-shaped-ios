@@ -1,6 +1,7 @@
 import Foundation
 
 enum Macro: Double {
+    
     case carb
     case fat
     case protein
@@ -16,7 +17,6 @@ enum Macro: Double {
             return 0.35
         }
     }
-    
     var kcal: Double {
         switch self {
         case .carb:
@@ -27,17 +27,13 @@ enum Macro: Double {
             return 4
         }
     }
-    
     var kcalMultiplier: Double {
-        kcalFactor()
+        percentage/kcal
     }
-    
-    // MARK: - Private Methods
-    private func kcalFactor() -> Double {
-       return percentage/kcal
-    }
-    
-    // MARK: - Public Methods
+}
+
+// MARK: - Public Methods
+extension Macro {
     func getMacrosCalculated(calories: Double) -> Double {
         return calories * kcalMultiplier
     }

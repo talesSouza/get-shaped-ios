@@ -1,6 +1,7 @@
 import UIKit
 
-enum Choices: Int {
+enum Choice: Int {
+    
     case thinner = 0
     case preserve = 1
     case stronger = 2
@@ -17,7 +18,7 @@ enum Choices: Int {
         }
     }
     
-    var name: String {
+    var description: String {
         switch self {
         case .thinner:
             return "thinner"

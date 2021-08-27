@@ -81,7 +81,9 @@ extension NewUserViewController {
 
 // MARK: - Methods
 extension NewUserViewController {
-    private func createNewUser() {
+    
+    @discardableResult
+    private func createNewUser() -> Bool {
         if let name = firstNameTextField.text,
            let ageText = ageTextField.text, let age = Double(ageText),
            let heightText = heightTextField.text, let height = Double(heightText),
@@ -97,26 +99,30 @@ extension NewUserViewController {
                         activityLvl: activityLvl)
             setBMILabel()
             setTDEELabel()
+            return true
         }
+        return false
     }
 }
 
 // MARK: - IBActions
 extension NewUserViewController {
+    
     @IBAction func changeGenderSegmentedColor() {
         genderSegmentedControl.selectedSegmentTintColor = genderSegmentedControl.selectedSegmentIndex == 0 ? .systemTeal : .systemPurple
         createNewUser()
     }
     
     @IBAction func presentInfoTouchUpInside(_ sender: UIButton) {
-        let alert = UIAlertController(title: "TDEE", message: "is an estimation of how many calories you burn per day when exercise is taken into account.", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Got it!", style: UIAlertAction.Style.default, handler: nil))
+        let alert = UIAlertController(title: "TDEE",
+                                      message: "is an estimation of how many calories you burn per day when exercise is taken into account.",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Got it!", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func goalsTouchUpInside(_ sender: UIButton) {
-        createNewUser()
-        if user != nil {
+        if createNewUser() {
             performSegue(withIdentifier: "goToGoals", sender: nil)
         }
     }
@@ -124,6 +130,7 @@ extension NewUserViewController {
 
 // MARK: - UITextFieldDelegate
 extension NewUserViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         setTextField()
         createNewUser()
@@ -133,6 +140,7 @@ extension NewUserViewController: UITextFieldDelegate {
 
 // MARK: - UIPickerViewDelegate
 extension NewUserViewController: UIPickerViewDelegate {
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return activities[row].rawValue
     }
@@ -145,6 +153,7 @@ extension NewUserViewController: UIPickerViewDelegate {
 
 // MARK: - UIPickerViewDataSource
 extension NewUserViewController: UIPickerViewDataSource {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

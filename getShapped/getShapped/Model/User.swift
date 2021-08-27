@@ -39,6 +39,7 @@ class User {
 
 // MARKK: - Private Methods
 extension User {
+    
     private func getBMI() -> Double {
         return (weight / (height*height))*10000
     }

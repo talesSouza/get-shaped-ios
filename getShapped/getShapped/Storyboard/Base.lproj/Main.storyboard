@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Epa-47-siw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Epa-47-siw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -387,10 +387,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulH-aN-MjR">
-                                <rect key="frame" x="305" y="574" width="20" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="r1D-jZ-wZb"/>
-                                </constraints>
+                                <rect key="frame" x="305" y="573" width="25" height="24"/>
                                 <color key="tintColor" systemColor="systemPurpleColor"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -596,7 +593,7 @@
                     <connections>
                         <outlet property="caloriesLabel" destination="bZw-fp-pgt" id="4EZ-UA-DSk"/>
                         <outlet property="carbsQtyLabel" destination="eBh-nX-zZw" id="fSv-ax-iRM"/>
-                        <outlet property="centerImage" destination="r9c-b6-qtH" id="qd2-Yu-mxB"/>
+                        <outlet property="centerImageView" destination="r9c-b6-qtH" id="qd2-Yu-mxB"/>
                         <outlet property="fatQtyLabel" destination="a38-QY-W1X" id="Usd-96-X5S"/>
                         <outlet property="goalSegmentedControl" destination="U0l-It-FJz" id="fmd-wk-oq2"/>
                         <outlet property="proteinQtyLabel" destination="NJD-U9-BjM" id="ohR-mq-x2u"/>

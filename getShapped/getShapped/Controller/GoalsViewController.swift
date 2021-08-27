@@ -4,7 +4,7 @@ class GoalsViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var goalSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var centerImage: UIImageView!
+    @IBOutlet weak var centerImageView: UIImageView!
     @IBOutlet weak var caloriesLabel: UILabel!
     @IBOutlet weak var carbsQtyLabel: UILabel!
     @IBOutlet weak var fatQtyLabel: UILabel!
@@ -12,13 +12,15 @@ class GoalsViewController: UIViewController {
     
     // MARK: - Stored Properties
     var user: User?
-    var choice: Choices?
-    var totalCalories: Double?
+    var choice: Choice = .thinner
+    var totalCalories: Double = 0
     
     // MARK: - Computed Properties
-    var labels: [UILabel] {
-        [carbsQtyLabel, fatQtyLabel, proteinQtyLabel]
-    }
+    lazy var macrosData: [(label: UILabel, macro: Macro)] = {
+        [(carbsQtyLabel, .carb),
+         (fatQtyLabel, .fat),
+         (proteinQtyLabel, .protein)]
+    }()
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -29,30 +31,18 @@ class GoalsViewController: UIViewController {
 
 // MARK: - Setup
 extension GoalsViewController {
-    private func setLabel() {
-        if let calories = totalCalories {
-            caloriesLabel.text = "So you have to eat \(String(format: "%.0f", calories))"
-        }
-    }
     
-    //aqui o ideal seria criar uma array pros itens ficarem guardados
-    private func setMacroLabels() {
-        if let totalCalories = totalCalories {
-            carbsQtyLabel.text = "\(String(format: "%.0f", Macro.carb.getMacrosCalculated(calories: totalCalories)))"
-            fatQtyLabel.text = "\(String(format: "%.0f", Macro.fat.getMacrosCalculated(calories: totalCalories)))"
-            proteinQtyLabel.text = "\(String(format: "%.0f", Macro.protein.getMacrosCalculated(calories: totalCalories)))"
-        }
+    private func setLabels() {
+        caloriesLabel.text = "So you have to eat \(String(format: "%.0f", totalCalories))"
+        macrosData.forEach { $0.label.text = "\(String(format: "%.0f", $0.macro.getMacrosCalculated(calories: totalCalories)))" }
     }
     
     private func setUI() {
-        choice = Choices(rawValue: goalSegmentedControl.selectedSegmentIndex)
-        if let user = user,
-           let choice = choice {
-            totalCalories = user.tdee + choice.calc
-            centerImage.image = UIImage(named: "\(choice.name)")
-            setLabel()
-            setMacroLabels()
-        }
+        guard let user = user,
+              let choice = Choice(rawValue:goalSegmentedControl.selectedSegmentIndex) else { return }
+        totalCalories = user.tdee + choice.calc
+        centerImageView.image = UIImage(named: "\(choice.description)")
+        setLabels()
     }
 }
 
