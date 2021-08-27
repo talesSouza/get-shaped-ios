@@ -17,18 +17,40 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var partialProteinLabel: UILabel!
     @IBOutlet weak var partialFatLabel: UILabel!
     
-    // MARK: - Life Cycle
+    // MARK: - Stored Properties
+    var user: User?
+}
+
+// MARK: - Life Cycle
+extension InitialViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        newUserButton.setupBorder(borderColor: .white)
+        setLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        setUserInfos()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+}
+
+// MARK: - Setup
+extension InitialViewController {
+    func setLayout() {
+        newUserButton.setupBorder(borderColor: .white)
+    }
+}
+
+// MARK: - Private Methods
+extension InitialViewController {
+    private func setUserInfos() {
+        guard let user = user else { return }
+        usernameLabel.text = user.name
+        usernameLabel.isHidden = false
     }
 }
 

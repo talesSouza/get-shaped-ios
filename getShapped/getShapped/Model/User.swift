@@ -14,6 +14,7 @@ class User {
     var height: Double
     var gender: Gender
     var activityLvl: ActivityLevel
+    var macroData: MacroData?
     
     // MARK: - Computed Properties
     var bmi: Double {

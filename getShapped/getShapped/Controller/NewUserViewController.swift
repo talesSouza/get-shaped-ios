@@ -26,8 +26,10 @@ class NewUserViewController: UIViewController {
     var textFields: [UITextField] {
         [firstNameTextField, ageTextField, heightTextField, weightTextField]
     }
-    
-    // MARK: - Life Cycle
+}
+
+// MARK: - Life Cycle
+extension NewUserViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setButton()
@@ -53,8 +55,7 @@ extension NewUserViewController {
     }
     
     private func setButton() {
-        goalsButton.setupBorder(borderWidth: 2)
-        
+        goalsButton.setupBorder(borderColor: .white)
     }
     
     private func setBMILabel() {
