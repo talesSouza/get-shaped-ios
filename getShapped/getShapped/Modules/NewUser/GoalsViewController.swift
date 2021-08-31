@@ -15,7 +15,6 @@ class GoalsViewController: UIViewController {
     var user: User?
     var choice: Choice = .thinner
     var totalCalories: Double = 0
-    var macroData: MacroData?
     var macroCalculated: Macro?
     
     // MARK: - Computed Properties
@@ -57,19 +56,17 @@ extension GoalsViewController {
     }
 }
 
-//// MARK: - Private Methods
-//extension GoalsViewController {
-//    private func setMacroData() {
-//        let carbCalculated = macroCalculated?.getMacrosCalculated(calories: totalCalories)
-//        
-//        if let macroData = macroData {
-//            macroData.carb = carbCalculated!
-//        }
-//    }
-//}
+// MARK: - Private Methods
+extension GoalsViewController {
+    
+    private func setMacroData() {
+        
+    }
+}
 
 // MARK: - IBActions
 extension GoalsViewController {
+    
     @IBAction func setChoiceValueChanged(_ sender: UISegmentedControl) {
         setUI()
     }

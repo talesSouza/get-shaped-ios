@@ -18,13 +18,13 @@ class User {
     
     // MARK: - Computed Properties
     var bmi: Double {
-        getBMI()
+        (weight / (height*height))*10000
     }
     var tmb: Double {
         getTMB()
     }
     var tdee: Double {
-        getTDEE()
+        activityLvl.multiplier * tmb
     }
     
     // MARK: - Initializers
@@ -40,10 +40,6 @@ class User {
 
 // MARKK: - Private Methods
 extension User {
-    
-    private func getBMI() -> Double {
-        return (weight / (height*height))*10000
-    }
    
     private func getTMB() -> Double {
         switch gender {
@@ -52,9 +48,5 @@ extension User {
         case .female:
             return (655 + (9.6 * weight) + (1.8 * height) - (4.7 * age))
         }
-    }
-    
-    private func getTDEE() -> Double {
-        return activityLvl.multiplier * tmb
     }
 }
