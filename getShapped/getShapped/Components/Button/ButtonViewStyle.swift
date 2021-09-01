@@ -9,7 +9,7 @@ enum ButtonViewStyle {
         case .primary:
             return TextStyle()
         case .secondary:
-            return TextStyle(size: .p12, weight: .semiBold)
+            return TextStyle(color: .white, size: .p12, weight: .semiBold)
         }
     }
     

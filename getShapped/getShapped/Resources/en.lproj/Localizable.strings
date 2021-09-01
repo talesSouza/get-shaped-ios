@@ -1,2 +1,5 @@
 // MARK: - Home
 "home.newuser" = "NEW USER";
+
+// MARK: - NewUser
+"newuser.goals" = "GOALS";

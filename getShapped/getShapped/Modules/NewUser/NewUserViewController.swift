@@ -2,14 +2,17 @@ import UIKit
 
 class NewUserViewController: UIViewController {
     
+    // MARK: - Dependencies
+    let viewModel: NewUserViewModel = NewUserViewModel()
+    
     // MARK: - IBOutlets
-    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
     
     @IBOutlet weak var infoButton: UIButton!
-    @IBOutlet weak var goalsButton: UIButton!
+    @IBOutlet weak var goalsButton: ButtonView!
     
     @IBOutlet weak var imcLabel: UILabel!
     @IBOutlet weak var tdeeLabel: UILabel!
@@ -24,7 +27,7 @@ class NewUserViewController: UIViewController {
     
     // MARK: - Computed Properties
     var textFields: [UITextField] {
-        [firstNameTextField, ageTextField, heightTextField, weightTextField]
+        [usernameTextField, ageTextField, heightTextField, weightTextField]
     }
 }
 
@@ -32,8 +35,7 @@ class NewUserViewController: UIViewController {
 extension NewUserViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        setButton()
-        endEditing()
+        setupButton()
     }
 }
 
@@ -54,10 +56,13 @@ extension NewUserViewController {
         textFields.forEach{ $0.resignFirstResponder() }
     }
     
-    private func setButton() {
+    func setupButton() {
+        goalsButton.set(title: "newuser.goals".localized, style: .primary)
         goalsButton.setupBorder(borderColor: .white)
     }
     
+    
+    //
     private func setBMILabel() {
         if let user = user {
             imcLabel.text = "your BMI is: \(String(format: "%.0f", user.bmi))"
@@ -73,19 +78,32 @@ extension NewUserViewController {
             infoButton.isHidden = false
         }
     }
-    
-    func endEditing() {
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tap)
-    }
+    //
 }
 
 // MARK: - Methods
 extension NewUserViewController {
     
+    private func changed(state: NewUserViewState) {
+        switch state {
+        case .started:
+            break
+        case .filledTexts:
+            setBMILabel()
+            setTDEELabel()
+        }
+    }
+    
+    func goToGoals() {
+        goalsButton.set { [weak self] in
+            guard let self = self else { return }
+            self.performSegue(withIdentifier: "goToGoals", sender: .none)
+        }
+    }
+    
     @discardableResult
     private func createNewUser() -> Bool {
-        if let name = firstNameTextField.text,
+        if let name = usernameTextField.text,
            let ageText = ageTextField.text, let age = Double(ageText),
            let heightText = heightTextField.text, let height = Double(heightText),
            let weightText = weightTextField.text, let weight = Double(weightText),
@@ -121,23 +139,55 @@ extension NewUserViewController {
         alert.addAction(UIAlertAction(title: "Got it!", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
-    @IBAction func goalsTouchUpInside(_ sender: UIButton) {
-        if createNewUser() {
-            performSegue(withIdentifier: "goToGoals", sender: nil)
-        }
-    }
 }
 
 // MARK: - UITextFieldDelegate
 extension NewUserViewController: UITextFieldDelegate {
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        setTextField()
-        createNewUser()
-        return true
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        
+        switch text {
+        case usernameTextField.text:
+            viewModel.set(username: text)
+        case ageTextField.text:
+            if let age = Int(text) {
+            viewModel.set(age: age)
+            }
+        case heightTextField.text:
+            if let height = Int(text) {
+                viewModel.set(height: height)
+            }
+        case weightTextField.text:
+            if let weight = Int(text) {
+                viewModel.set(weight: weight)
+            }
+        default:
+            print("error")
+        }
+        
+        
     }
 }
+        // PERGUNTAR QUAL MELHOR OPÇAO
+//
+//        if text == usernameTextField.text {
+//            viewModel.set(username: text)
+//        } else if text == ageTextField.text {
+//            if let age = Int(text) {
+//            viewModel.set(age: age)
+//            }
+//        } else if text == heightTextField.text {
+//            if let height = Int(text) {
+//                viewModel.set(height: height)
+//            }
+//        } else if text == weightTextField.text {
+//            if let weight = Int(text) {
+//                viewModel.set(weight: weight)
+//            }
+//        }
+//    }
+//}
 
 // MARK: - UIPickerViewDelegate
 extension NewUserViewController: UIPickerViewDelegate {

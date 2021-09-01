@@ -146,7 +146,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZg-ad-xSA">
-                                <rect key="frame" x="138" y="261" width="138" height="24"/>
+                                <rect key="frame" x="138" y="291" width="138" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="138" id="E76-3w-Q9g"/>
                                 </constraints>
@@ -154,9 +154,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nU5-Ra-pkH" customClass="ButtonView" customModule="getShapped" customModuleProvider="target">
-                                <rect key="frame" x="261" y="164" width="116" height="37"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nU5-Ra-pkH" customClass="ButtonView" customModule="getShapped" customModuleProvider="target">
+                                <rect key="frame" x="261" y="194" width="116" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="cl5-gb-DWU"/>
                                     <constraint firstAttribute="width" constant="116" id="vfX-Ma-rBF"/>
@@ -178,7 +178,7 @@
                             <constraint firstAttribute="bottom" secondItem="NRL-89-u6z" secondAttribute="bottom" id="O8C-nY-ZKw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nU5-Ra-pkH" secondAttribute="trailing" constant="37" id="WEG-ec-W7M"/>
                             <constraint firstItem="xZg-ad-xSA" firstAttribute="top" secondItem="nU5-Ra-pkH" secondAttribute="bottom" constant="60" id="eVd-03-Y9B"/>
-                            <constraint firstItem="nU5-Ra-pkH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="fiY-kX-jRa"/>
+                            <constraint firstItem="nU5-Ra-pkH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="fiY-kX-jRa"/>
                             <constraint firstItem="76o-YQ-0Bq" firstAttribute="top" secondItem="orX-bg-ka3" secondAttribute="bottom" constant="90" id="j9r-Bt-Yr3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="76o-YQ-0Bq" secondAttribute="bottom" constant="122" id="pCb-h6-7cQ"/>
                             <constraint firstItem="XE4-zY-ogb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="qCM-bN-YuG"/>
@@ -370,7 +370,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WZ-cu-A0N">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WZ-cu-A0N">
                                 <rect key="frame" x="135" y="727" width="144" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="144" id="dL7-Zc-Bdm"/>
@@ -421,13 +421,13 @@
                     <connections>
                         <outlet property="activityLevelPickerView" destination="bNb-vo-7Ae" id="XSt-C1-ZqT"/>
                         <outlet property="ageTextField" destination="R7b-na-2pL" id="eam-xY-S5S"/>
-                        <outlet property="firstNameTextField" destination="2dP-2U-AUj" id="5Fx-9c-hwB"/>
                         <outlet property="genderSegmentedControl" destination="50j-8K-vsY" id="Xqc-j0-JeE"/>
                         <outlet property="goalsButton" destination="1WZ-cu-A0N" id="MkZ-AT-IUN"/>
                         <outlet property="heightTextField" destination="XGC-gx-yjH" id="IIn-8f-jRd"/>
                         <outlet property="imcLabel" destination="p7K-vh-q4G" id="dFZ-fK-2ts"/>
                         <outlet property="infoButton" destination="ulH-aN-MjR" id="Xnf-Vr-dQE"/>
                         <outlet property="tdeeLabel" destination="a59-fA-QUx" id="unz-c7-CO3"/>
+                        <outlet property="usernameTextField" destination="2dP-2U-AUj" id="5Fx-9c-hwB"/>
                         <outlet property="weightTextField" destination="Qtb-ad-LBZ" id="q11-Jf-aRk"/>
                         <segue destination="BSX-wW-dMc" kind="show" identifier="goToGoals" id="02H-vP-V6j"/>
                     </connections>

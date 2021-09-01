@@ -5,7 +5,7 @@ class ButtonView: UIView, NibOwnerLoadable {
     @IBOutlet private var button: UIButton!
     
     // MARK: - Stored Properties
-    let textBuilder = TextBuilder()
+    private let textBuilder = TextBuilder()
     
     // MARK: - Actions //arrumar a simpleCLosure
     private var onTapAction: SimpleClosure = {}
@@ -21,7 +21,7 @@ class ButtonView: UIView, NibOwnerLoadable {
 extension ButtonView {
     func set(title: String, style: ButtonViewStyle) {
         button.setAttributedTitle(textBuilder.buildText(text: title, style: style.textStyle), for: .normal)
-        backgroundColor = style.background
+        button.backgroundColor = style.background
     }
     
     func set(onTapAction: @escaping SimpleClosure) {

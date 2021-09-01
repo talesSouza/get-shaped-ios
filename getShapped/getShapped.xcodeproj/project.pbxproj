@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C2FDF8126D447A100CD2EAE /* ActivityLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2FDF8026D447A100CD2EAE /* ActivityLevel.swift */; };
 		1C36725E26D5BCC500EFC018 /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C36725D26D5BCC500EFC018 /* Choice.swift */; };
+		1C7C57D126DFACC600B8F0F5 /* ButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C7C57D026DFACC600B8F0F5 /* ButtonView.xib */; };
 		1C7C6EF226D29D24001BF9D0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7C6EF126D29D24001BF9D0 /* User.swift */; };
 		1C7F5E2326D9352B00BDB83A /* MacroData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F5E2226D9352B00BDB83A /* MacroData.swift */; };
 		1C8C274826D6EAD6002C3B58 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8C274726D6EAD6002C3B58 /* Macro.swift */; };
@@ -29,12 +30,13 @@
 		1CE3674E26DE6BA0007B0801 /* ButtonViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3674D26DE6BA0007B0801 /* ButtonViewStyle.swift */; };
 		1CE3675226DE6E97007B0801 /* TextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3675126DE6E97007B0801 /* TextBuilder.swift */; };
 		1CE3675426DE6E9D007B0801 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3675326DE6E9D007B0801 /* TextStyle.swift */; };
-		1CE3675626DEBC84007B0801 /* ButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CE3675526DEBC84007B0801 /* ButtonView.xib */; };
 		1CE3675A26DEC205007B0801 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3675926DEC205007B0801 /* HomeViewModel.swift */; };
 		1CE3675C26DEC20E007B0801 /* HomeViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3675B26DEC20E007B0801 /* HomeViewState.swift */; };
 		1CE3675F26DEC57E007B0801 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CE3676126DEC57E007B0801 /* Localizable.strings */; };
 		1CE3676426DEC5E1007B0801 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3676326DEC5E1007B0801 /* String+Extensions.swift */; };
 		1CE3676726DECAFC007B0801 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3676626DECAFC007B0801 /* BaseViewController.swift */; };
+		1CF6C86426DFC3A0003ACE2F /* NewUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6C86326DFC3A0003ACE2F /* NewUserViewModel.swift */; };
+		1CF6C86626DFEEA6003ACE2F /* NewUserViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6C86526DFEEA6003ACE2F /* NewUserViewState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,7 @@
 /* Begin PBXFileReference section */
 		1C2FDF8026D447A100CD2EAE /* ActivityLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevel.swift; sourceTree = "<group>"; };
 		1C36725D26D5BCC500EFC018 /* Choice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
+		1C7C57D026DFACC600B8F0F5 /* ButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonView.xib; sourceTree = "<group>"; };
 		1C7C6EF126D29D24001BF9D0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1C7F5E2226D9352B00BDB83A /* MacroData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroData.swift; sourceTree = "<group>"; };
 		1C8C274726D6EAD6002C3B58 /* Macro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
@@ -83,12 +86,13 @@
 		1CE3674D26DE6BA0007B0801 /* ButtonViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewStyle.swift; sourceTree = "<group>"; };
 		1CE3675126DE6E97007B0801 /* TextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBuilder.swift; sourceTree = "<group>"; };
 		1CE3675326DE6E9D007B0801 /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
-		1CE3675526DEBC84007B0801 /* ButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonView.xib; sourceTree = "<group>"; };
 		1CE3675926DEC205007B0801 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1CE3675B26DEC20E007B0801 /* HomeViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewState.swift; sourceTree = "<group>"; };
 		1CE3676026DEC57E007B0801 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1CE3676326DEC5E1007B0801 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		1CE3676626DECAFC007B0801 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1CF6C86326DFC3A0003ACE2F /* NewUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewModel.swift; sourceTree = "<group>"; };
+		1CF6C86526DFEEA6003ACE2F /* NewUserViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,7 +263,7 @@
 			children = (
 				1CE3674526DE69C4007B0801 /* ButtonView.swift */,
 				1CE3674D26DE6BA0007B0801 /* ButtonViewStyle.swift */,
-				1CE3675526DEBC84007B0801 /* ButtonView.xib */,
+				1C7C57D026DFACC600B8F0F5 /* ButtonView.xib */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -287,6 +291,8 @@
 			isa = PBXGroup;
 			children = (
 				1CBA8CA626D1AF4C000A0BD5 /* NewUserViewController.swift */,
+				1CF6C86326DFC3A0003ACE2F /* NewUserViewModel.swift */,
+				1CF6C86526DFEEA6003ACE2F /* NewUserViewState.swift */,
 				1CBA8CAB26D1F94D000A0BD5 /* GoalsViewController.swift */,
 			);
 			path = NewUser;
@@ -414,7 +420,7 @@
 				1CE3675F26DEC57E007B0801 /* Localizable.strings in Resources */,
 				1CBA8C7F26D19D43000A0BD5 /* LaunchScreen.storyboard in Resources */,
 				1CBA8C7C26D19D43000A0BD5 /* Assets.xcassets in Resources */,
-				1CE3675626DEBC84007B0801 /* ButtonView.xib in Resources */,
+				1C7C57D126DFACC600B8F0F5 /* ButtonView.xib in Resources */,
 				1CBA8C7A26D19D41000A0BD5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,7 +465,9 @@
 				1CBA8CAA26D1E5B7000A0BD5 /* UIView+Extensions.swift in Sources */,
 				1C2FDF8126D447A100CD2EAE /* ActivityLevel.swift in Sources */,
 				1CBA8C7526D19D41000A0BD5 /* SceneDelegate.swift in Sources */,
+				1CF6C86626DFEEA6003ACE2F /* NewUserViewState.swift in Sources */,
 				1CE3674926DE69FB007B0801 /* NibOwnerLoadable.swift in Sources */,
+				1CF6C86426DFC3A0003ACE2F /* NewUserViewModel.swift in Sources */,
 				1CBA8CAC26D1F94D000A0BD5 /* GoalsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
