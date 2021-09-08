@@ -120,6 +120,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C5316A926E9447300967560 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
 		1C7C6EEE26D29B46001BF9D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +242,7 @@
 		1CE3674426DE69AA007B0801 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1C5316A926E9447300967560 /* Label */,
 				1CE3674F26DE6E7A007B0801 /* Button */,
 				1CE3675026DE6E84007B0801 /* Text */,
 			);

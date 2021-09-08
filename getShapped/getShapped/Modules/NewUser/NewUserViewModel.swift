@@ -4,45 +4,44 @@ class NewUserViewModel {
     
     @Published var state: NewUserViewState = .started
     
-    private var user: User?
-    
-    private var username: String?
-    private var age: Int?
-    private var height: Int?
-    private var weight: Int?
+    var user: User?
 }
 
 // MARK: - Computed Properties
 extension NewUserViewModel {
+    //aqui acho q ta errado
     var goTogoals: Bool {
-        goToGoals()
+        guard let user = self.user else { return false }
+        state = .filledTexts
+        return true
     }
 }
 
+// MARK: - Methods
 extension NewUserViewModel {
     func set(username: String) {
-        self.username = username
+        if let user = self.user {
+            user.name = username
+        }
     }
-    func set(age: Int) {
-        self.age = age
+    func set(age: Double) {
+        if let user = self.user {
+            user.age = age
+        }
     }
-    func set(height: Int) {
-        self.height = height
+    func set(height: Double) {
+        if let user = self.user {
+            user.height = height
+        }
     }
-    func set(weight: Int) {
-        self.weight = weight
+    func set(weight: Double) {
+        if let user = self.user {
+            user.weight = weight
+        }
     }
 }
 
 // MARK: - Service
 extension NewUserViewModel {
-
-    func goToGoals() -> Bool {
-        guard let username = username,
-              let age = age,
-              let height = height,
-              let weight = weight else { return false }
-        state = .filledTexts
-        return true
-    }
+    
 }

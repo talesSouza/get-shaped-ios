@@ -15,7 +15,7 @@ class TextBuilder {
 // MARK: - Private Methods
 extension TextBuilder {
     private func getKailasa(withSize size: CGFloat, weight: TextBuilderFontWeight) -> UIFont {
-        let baseName = "Kaisala-"
+        let baseName = "Kailasa"
         return UIFont(name: baseName + weight.rawValue, size: size) ?? UIFont.systemFont(ofSize: size)
     }
 }

@@ -6,8 +6,7 @@ enum TextBuilderFontSize: CGFloat {
 }
 
 enum TextBuilderFontWeight: String {
-    case bold = "Bold"
-    case semiBold = "Regular"
+    case bold = "-Bold"
 }
 
 struct TextStyle {

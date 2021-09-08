@@ -1,6 +1,6 @@
 import UIKit
 
-class NewUserViewController: UIViewController {
+class NewUserViewController: BaseViewController {
     
     // MARK: - Dependencies
     let viewModel: NewUserViewModel = NewUserViewModel()
@@ -23,7 +23,6 @@ class NewUserViewController: UIViewController {
     // MARK: - Stored Properties
     let activities: [ActivityLevel] = ActivityLevel.allCases
     var selectedActivity: ActivityLevel? = .highLevel
-    var user: User?
     
     // MARK: - Computed Properties
     var textFields: [UITextField] {
@@ -43,7 +42,7 @@ extension NewUserViewController {
 extension NewUserViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? GoalsViewController,
-           let user = user {
+           let user = viewModel.user {
             vc.user = user
         }
     }
@@ -56,32 +55,31 @@ extension NewUserViewController {
         textFields.forEach{ $0.resignFirstResponder() }
     }
     
-    func setupButton() {
+    private func setupButton() {
         goalsButton.set(title: "newuser.goals".localized, style: .primary)
         goalsButton.setupBorder(borderColor: .white)
     }
     
+    //COMPONETIZAR AS LABELS
     
-    //
     private func setBMILabel() {
-        if let user = user {
+        if let user = viewModel.user {
             imcLabel.text = "your BMI is: \(String(format: "%.0f", user.bmi))"
             imcLabel.isHidden = false
         }
     }
     
     private func setTDEELabel() {
-        if let user = user {
+        if let user = viewModel.user {
             tdeeLabel.text = "Your TDEE is: \(String(format: "%.0f", user.tdee))"
             
             tdeeLabel.isHidden = false
             infoButton.isHidden = false
         }
     }
-    //
 }
 
-// MARK: - Methods
+// MARK: - View State
 extension NewUserViewController {
     
     private func changed(state: NewUserViewState) {
@@ -94,10 +92,23 @@ extension NewUserViewController {
         }
     }
     
-    func goToGoals() {
-        goalsButton.set { [weak self] in
+    private func setObserver() {
+        observe(viewModel.$state) { [weak self] state in
             guard let self = self else { return }
-            self.performSegue(withIdentifier: "goToGoals", sender: .none)
+            self.changed(state: state)
+        }
+    }
+}
+    
+// MARK: - Methods
+extension NewUserViewController {
+    func goToGoals() {
+        //aqui tbm acho q ta errado
+        if viewModel.goTogoals {
+            goalsButton.set { [weak self] in
+                guard let self = self else { return }
+                self.performSegue(withIdentifier: "goToGoals", sender: .none)
+            }
         }
     }
     
@@ -110,12 +121,12 @@ extension NewUserViewController {
            let gender = Gender(rawValue: genderSegmentedControl.selectedSegmentIndex),
            let activityLvl = selectedActivity {
             
-            user = User(name: name,
-                        age: age,
-                        weight: weight,
-                        height: height,
-                        gender: gender,
-                        activityLvl: activityLvl)
+            viewModel.user = User(name: name,
+                                  age: age,
+                                  weight: weight,
+                                  height: height,
+                                  gender: gender,
+                                  activityLvl: activityLvl)
             setBMILabel()
             setTDEELabel()
             return true
@@ -151,25 +162,23 @@ extension NewUserViewController: UITextFieldDelegate {
         case usernameTextField.text:
             viewModel.set(username: text)
         case ageTextField.text:
-            if let age = Int(text) {
-            viewModel.set(age: age)
+            if let age = Double(text) {
+                viewModel.set(age: age)
             }
         case heightTextField.text:
-            if let height = Int(text) {
+            if let height = Double(text) {
                 viewModel.set(height: height)
             }
         case weightTextField.text:
-            if let weight = Int(text) {
+            if let weight = Double(text) {
                 viewModel.set(weight: weight)
             }
         default:
             print("error")
         }
-        
-        
     }
 }
-        // PERGUNTAR QUAL MELHOR OPÇAO
+// PERGUNTAR QUAL MELHOR OPÇAO
 //
 //        if text == usernameTextField.text {
 //            viewModel.set(username: text)

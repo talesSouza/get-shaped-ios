@@ -25,12 +25,17 @@ class HomeViewController: BaseViewController {
 extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        changed(state: .noUser)
         setupButtons()
         setObserver()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        UIFont.familyNames.forEach({ familyName in
+                  let fontNames = UIFont.fontNames(forFamilyName: familyName)
+                  print(familyName, fontNames)
+              })
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,10 +48,11 @@ extension HomeViewController {
     func setupButtons() {
         newUserButton.set(title: "home.newuser".localized, style: .secondary)
         newUserButton.setupBorder(borderColor: .white)
-        newUserButton.set { [weak self] in
+        //aqui anteriormente nao tinha o "ontapaction", tentei assim.
+        newUserButton.set(onTapAction: { [weak self] in
             guard let self = self else { return }
-            self.performSegue(withIdentifier: "goToNewUser", sender: .none)
-        }
+            self.changed(state: .noUser)
+        })
     }
 }
 
@@ -55,7 +61,7 @@ extension HomeViewController {
     private func changed(state: HomeViewState) {
         switch state {
         case .noUser:
-            print("deve começar na proxima tela")
+            self.performSegue(withIdentifier: "goToNewUser", sender: .none)
             break
         case .userCreated:
             print("deve iniciar nesta tela")

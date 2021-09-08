@@ -7,7 +7,7 @@ class ButtonView: UIView, NibOwnerLoadable {
     // MARK: - Stored Properties
     private let textBuilder = TextBuilder()
     
-    // MARK: - Actions //arrumar a simpleCLosure
+    // MARK: - Actions
     private var onTapAction: SimpleClosure = {}
     
     // MARK: - Initializers
